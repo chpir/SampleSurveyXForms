@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+	<h:head>
+		<h:title>Center for Health Policy Sample Survey</h:title>
+		<model>
+			<itext>
+				<translation lang="Swahili">
+					<text id="yesno"><value>Swahili: Please select yes or no:</value></text>
+					<text id="yesno_hint"><value>Swahili: YesNo hint</value></text>
+					<text id="yes"><value>Swahili: Yes</value></text>
+					<text id="no"><value>Swahili: No</value></text>	
+				</translation>
+				<translation lang="English">
+					<text id="yesno"><value>Please select yes or no:</value></text>
+					<text id="yesno_hint"><value>YesNo hint</value></text>
+					<text id="yes"><value>Yes</value></text>
+					<text id="no"><value>No</value></text>
+				</translation>
+			</itext>
+			<instance>
+				<!-- submitted data and defaults go here -->
+				<samplesurvey id="samplesurvey">
+					<YesNo/>
+				</samplesurvey>
+			</instance> 
+			<!-- add properties to the questions, like data types, skip logic, and constraints -->
+			<bind nodeset="/samplesurvey/YesNo" type="string">
+			</model>
+		</h:head>
+		<h:body>   
+			<!-- define the questions that the user will fill out -->
+			<select1 ref="/samplesurvey/YesNo">
+				<label ref="jr:itext('yesno')"/>
+				<hint ref="jr:itext('yesno_hint')"/>
+				<item>
+					<label ref="jr:itext('yes')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('yes')"/>
+					<value>no</value>
+				</item>
+			</select1>
+			<trigger ref="/HouseholdSurvey/HeadOfHouseholdConfirmation">
+				<label>Acknowledge that you just said '<output value="/samplesurvey/YesNo"/>'!</label>
+			</trigger>
+		</h:body>
+	</h:html>
