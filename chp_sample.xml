@@ -21,6 +21,7 @@
 				<!-- submitted data and defaults go here -->
 				<samplesurvey id="samplesurvey">
 					<YesNo/>
+					<YesNoConfirm/>
 				</samplesurvey>
 			</instance> 
 			<!-- add properties to the questions, like data types, skip logic, and constraints -->
@@ -41,7 +42,7 @@
 					<value>no</value>
 				</item>
 			</select1>
-			<trigger ref="/HouseholdSurvey/HeadOfHouseholdConfirmation">
+			<trigger ref="/samplesurvey/YesNoConfirm">
 				<label>Acknowledge that you just said '<output value="/samplesurvey/YesNo"/>'!</label>
 			</trigger>
 		</h:body>
