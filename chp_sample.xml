@@ -24,7 +24,7 @@
 				</samplesurvey>
 			</instance> 
 			<!-- add properties to the questions, like data types, skip logic, and constraints -->
-			<bind nodeset="/samplesurvey/YesNo" type="string">
+			<bind nodeset="/samplesurvey/YesNo" type="string"/>
 			</model>
 		</h:head>
 		<h:body>   
