@@ -6,21 +6,36 @@
 		<model>
 			<itext>
 				<translation lang="Swahili">
-					<text id="yesno"><value>Swahili: Please select yes or no:</value></text>
-					<text id="yesno_hint"><value>Swahili: YesNo hint</value></text>
-					<text id="yes"><value>Swahili: Yes</value></text>
-					<text id="no"><value>Swahili: No</value></text>	
+					<text id="yesno">
+                        <value>Swahili: Please select yes or no:</value>
+                    </text>
+					<text id="yesno_hint">
+                        <value>Swahili: YesNo hint</value>
+                    </text>
+                    <text id="yes">
+                        <value>Swahili: Yes</value></text>
+					<text id="no">
+                        <value>Swahili: No</value>
+                    </text>	
 				</translation>
 				<translation lang="English">
-					<text id="yesno"><value>Please select yes or no:</value></text>
-					<text id="yesno_hint"><value>YesNo hint</value></text>
-					<text id="yes"><value>Yes</value></text>
-					<text id="no"><value>No</value></text>
+					<text id="yesno">
+                        <value>Please select yes or no:</value>
+                    </text>
+					<text id="yesno_hint">
+                        <value>YesNo hint</value>
+                    </text>
+                    <text id="yes">
+                        <value>Yes</value>
+                    </text>
+                    <text id="no">
+                        <value>No</value>
+                    </text>
 				</translation>
 			</itext>
 			<instance>
 				<!-- submitted data and defaults go here -->
-				<samplesurvey id="samplesurvey">
+				<samplesurvey xmlns="samplesurvey">
 					<YesNo/>
 					<YesNoConfirm/>
 				</samplesurvey>
