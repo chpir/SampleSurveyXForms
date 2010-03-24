@@ -243,8 +243,8 @@
          </trigger>
          
          <group>
-            <label>linked to answer in question 10</label>
-            <repeat nodeset="/samplesurvey/q11number" jr:noAddRemove="true()" jr:count="/samplesurvey/q10answer">
+            <label>linked to value from question ten!</label>
+            <repeat nodeset="/samplesurvey/q11number" jr:count="/samplesurvey/q10answer">
                <select1 ref="/samplesurvey/q11number/q11a">
                   <label>click on one of these.</label>
                   <hint>Suffer the Slings and Arrows!</hint>
