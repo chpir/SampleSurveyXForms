@@ -1,371 +1,331 @@
 <?xml version="1.0"?>
 <h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
-   <h:head>
-      <h:title>CHP</h:title>
-      
-      <model>
-         <itext>
-            <translation lang="Swahili">
-               
-               <text id="q1yesno"><value>Swahili: Please select yes or no:</value></text>
-               <text id="q1yesno_hint"><value>Swahili: YesNo hint</value></text>
-               <text id="q1yes"><value>Swahili: Yes</value></text>
-               <text id="q1no"><value>Swahili: No</value></text>
-               
-               <text id="q2select"><value>Swahili: Please Select one of the following:</value></text>
-               <text id="q2hint"><value>Swahili: Just pick one of them. It will be fine.</value></text>
-               <text id="q2opt1"><value>Swahili: Option 1</value></text>
-               <text id="q2opt2"><value>Swahili: Option 2</value></text>
-               <text id="q2opt3"><value>Swahili: Option 3</value></text>
-               <text id="q2opt4"><value>Swahili: Other (answer in next question)</value></text>
-               
-               <text id="q3text"><value>Swahili: Acknowledge that you just said '<output value="/samplesurvey/q1YesNo"/>' in question one!</value></text>   
-               
-               <text id="q2_5text"><value>Swahili: You answered 'other' in question 3. Tell us what you mean:</value></text>
-               <text id="q2_5hint"><value>Swahili: Try typing something.</value></text>
+	<h:head>
+		<h:title>CHP Sample Survey</h:title>
 
-               <text id="q10text"><value>maybe you should try <output value="/samplesurvey/q10answer"/>.</value></text>
-            </translation>
-            <translation lang="English">
-               <text id="q1yesno"><value>Please select yes or no:</value></text>
-               <text id="q1yesno_hint"><value>YesNo hint</value></text>
-               <text id="q1yes"><value>Yes</value></text>
-               <text id="q1no"><value>No</value></text>
+		<model>
+			<itext>
+				<translation lang="Swahili">
+					<text id="initial_instructions">
+						<value>Swahili: This text would be instructions to the interviewer about the following questions. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec lobortis felis. Sed ac mi diam. Ut eget orci magna, sed fringilla dolor. Morbi elementum interdum lectus nec porttitor. Donec id posuere ante. Fusce augue felis, aliquam quis laoreet nec, facilisis bibendum ligula. Donec scelerisque feugiat mattis.</value>
+					</text>
+					<text id="q1yesno"><value>1) Swahili: Please select yes or no:</value></text>
+					<text id="q1yesno_hint"><value>Swahili: YesNo hint</value></text>
+					<text id="q1yes"><value>Swahili: Yes</value></text>
+					<text id="q1no"><value>Swahili: No</value></text>
 
-               <text id="q2select"><value>Please Select one of the following:</value></text>
-               <text id="q2hint"><value>Just pick one of them. It will be fine.</value></text>
-               <text id="q2opt1"><value>Option 1</value></text>
-               <text id="q2opt2"><value>Option 2</value></text>
-               <text id="q2opt3"><value>Option 3</value></text>
-               <text id="q2opt4"><value>Other (answer in next question)</value></text>
-               
-               <text id="q2_5text"><value>You answered 'other' in question 3. Tell us what you mean:</value></text>
-               <text id="q2_5hint"><value>Try typing something.</value></text>
-               
-               <text id="q3text"><value>Acknowledge that you just said '<output value="/samplesurvey/q1YesNo"/>' in question one!</value></text>
+					<text id="q2select"><value>2) Swahili: Please Select one of the following:</value></text>
+					<text id="q2hint"><value>Swahili: Just pick one of them. It will be fine.</value></text>
+					<text id="q2opt1"><value>Swahili: Option 1</value></text>
+					<text id="q2opt2"><value>Swahili: Option 2</value></text>
+					<text id="q2opt3"><value>Swahili: Option 3</value></text>
+					<text id="q2opt4"><value>Swahili: Other (answer in next question)</value></text>
 
-               <text id="q10text"><value>maybe you should try <output value="/samplesurvey/q10answer"/>.</value></text>
-               
-            </translation>
-         </itext>
-         
-         <instance>
-            <!-- submitted data and defaults go here -->
-            <samplesurvey xmlns="samplesurvey">
-               <q1YesNo/>
-               <q2option/>
-               <q2_5otherofthree/>
-               <q3option/>
-               <q3YesNoConfirm/>
-               <interim1/>
-               <q4free>Type Me.</q4free>
-               <q5date/>
-              <!-- no q6 -->
-               <interim2/>
-               <q7number/>
-               <q8number/>
-               <q9number/>
-               <q10number/>
-               <q10answer/>
-               <interim3/>
-               <q11number jr:template="">
-                  <q11a/>
-                  <q11a_5/>
-                  <q11b/>
-                  <q11c/>
-               </q11number>
-               <q11_5text/>
-               <q11_5interim/>
-               <q13relateto10/>
-               <q14scale/>
-               <q15time/>
-               <q16breakfast/>
-               <q17final/>
-               
-            </samplesurvey>
-         </instance> 
-         
-         <!-- add properties to the questions, like data types, skip logic, and constraints -->
-         <bind nodeset="/samplesurvey/q1YesNo" type="string"/>
-         <bind nodeset="/samplesurvey/q2option" type="string"/>
-         <bind nodeset="/samplesurvey/q2_5otherofthree" type="string" required="true()"  relevant="/samplesurvey/q2option = 'other'" />
-         <bind nodeset="/samplesurvey/q3option" type="string" />
-         <bind nodeset="/samplesurvey/q3YesNoConfirm" required="true()"/>
-         <bind nodeset="/samplesurvey/interim1" required="true()"/>
-         <bind nodeset="/samplesurvey/q4free" type="string" />
-         <bind nodeset="/samplesurvey/q5date" type="date" />
-         <!--       question 6 is not possible         -->
-         <bind nodeset="/samplesurvey/interim2" required="true()" />
-         <bind nodeset="/samplesurvey/q7number" type="double" required="true()" constraint=". >= -1 and . <= 1" jr:constraintMsg="Number must be between -1 and 1, silly." />
-         <bind nodeset="/samplesurvey/q8number" type="integer" required="true()" constraint=". >= 1 and . <= 5" jr:constraintMsg="Number must be between 1 and 5, silly." />
-         <bind nodeset="/samplesurvey/q9number" type="integer" required="true()" constraint=". >= 0 and . <= 4" jr:constraintMsg="Number must be between 0 and 4, silly." />
-         <bind nodeset="/samplesurvey/q10number" type="integer" required="true()" constraint=". = ../q9number + ../q8number" jr:constraintMsg="no variables in fail message!"/>
-         <bind nodeset="/samplesurvey/q10answer" type="integer" calculate="../q8number + ../q9number" />
-         <bind nodeset="/samplesurvey/interim3" required="true()" />
-         <bind nodeset="/samplesurvey/q11number" />
-         <bind nodeset="/samplesurvey/q11number/q11a" type="string" required="true()" />
-         <bind nodeset="/samplesurvey/q11number/q11a_5" type="string" required="true()" relevant="/samplesurvey/q11number/q11a = 'q11opt4'" />
-         <bind nodeset="/samplesurvey/q11number/q11b" type="integer" required="true()" relevant="/samplesurvey/q11number/q11a != 'q11opt2'" constraint=". >= 1 and . <= 10" jr:constraintMsg="1 to 10" />
-         <bind nodeset="/samplesurvey/q11number/q11c" type="string" required="true()" />
-         <bind nodeset="/samplesurvey/q11_5text" calculate="count(../q11number)" />
-         <bind nodeset="/samplesurvey/q11_5interim" required="true()" />
-         <bind nodeset="/samplesurvey/q13relateto10" type="double" required="true()"constraint=". >= 0 and . <= ../q10answer" jr:constraintMsg="Check your range, silly." />
-         <bind nodeset="/samplesurvey/q14scale" type="integer" required="true()" />
-         <bind nodeset="/samplesurvey/q15time" type="time" />
-         <bind nodeset="/samplesurvey/q16breakfast" required="true()" />
-         <bind nodeset="/samplesurvey/q17final" type="string" />
+					<text id="q2_5text"><value>3) Swahili: You answered 'other' in question 3. Tell us what you mean:</value></text>
+					<text id="q2_5hint"><value>Swahili: Try typing something.</value></text>
 
-         </model>
-      </h:head>
-      <h:body> 
-           
-         <!-- define the questions that the user will fill out -->
-         
-         <group>
-            <label>Group 1A</label>
-               
-            <select1 ref="/samplesurvey/q1YesNo">
-               <label ref="jr:itext('q1yesno')"/>
-               <hint ref="jr:itext('q1yesno_hint')"/>
-               <item>
-                  <label ref="jr:itext('q1yes')"/>
-                  <value>yes</value>
-               </item>
-               <item>
-                  <label ref="jr:itext('q1no')"/>
-                  <value>no</value>
-               </item>
-            </select1>
-            
-         
-            <select1 ref="/samplesurvey/q2option">
-               <label ref="jr:itext('q2select')"/>
-               <hint ref="jr:itext('q2hint')"/>
-               <item>
-                  <label ref="jr:itext('q2opt1')"/>
-                  <value>opt1</value>
-               </item>
-               <item>
-                  <label ref="jr:itext('q2opt2')"/>
-                  <value>opt2</value>
-               </item>
-               <item>
-                  <label ref="jr:itext('q2opt3')"/>
-                  <value>opt3</value>
-               </item>
-               <item>
-                  <label ref="jr:itext('q2opt4')"/>
-                  <value>other</value>
-               </item>
-            </select1>
+					<text id="q10text"><value>maybe you should try <output value="/samplesurvey/q10answer"/>.</value></text>
+				</translation>
+				<translation lang="English">
+					<text id="initial_instructions">
+						<value>This text would be instructions to the interviewer about the following questions. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec lobortis felis. Sed ac mi diam. Ut eget orci magna, sed fringilla dolor. Morbi elementum interdum lectus nec porttitor. Donec id posuere ante. Fusce augue felis, aliquam quis laoreet nec, facilisis bibendum ligula. Donec scelerisque feugiat mattis.</value>
+					</text>
+					<text id="q1yesno"><value>1) Please select yes or no:</value></text>
+					<text id="q1yesno_hint"><value>YesNo hint</value></text>
+					<text id="q1yes"><value>Yes</value></text>
+					<text id="q1no"><value>No</value></text>
 
-            <input ref="/samplesurvey/q2_5otherofthree">
-               <label ref="jr:itext('q2_5text')"/>
-               <hint ref="jr:itext('q2_5hint')"/>
-            </input>
-            
-            <select ref="/samplesurvey/q3option">
-               <label>Select any of the following.</label>
-               <hint>Press them all! Go nuts!</hint>
-               <item>
-                  <label>4irst p0st!</label>
-                  <value>1</value>
-               </item>
-               <item>
-                  <label>Second place is still pretty good.</label>
-                  <value>2</value>
-               </item>
-               <item>
-                  <label>Whatever, I'm going to community college.</label>
-                  <value>3</value>
-               </item>
-               <item>
-                  <label>School is for losers. Look at my WOW score!</label>
-                  <value>4</value>
-               </item>
-               <item>
-                  <label>DURR IM SPECIAL..</label>
-                  <value>5</value>
-               </item>
-            </select>
-         
-         </group>
-         
-         <trigger ref="/samplesurvey/q3YesNoConfirm">
-            <label ref="jr:itext('q3text')"/>
-         </trigger>
-         
-         <trigger ref="/samplesurvey/interim1">
-            <label>From now on, these questions are only provided in english (it's getting tiring to write out the extras in just a text editor!)</label>
-         </trigger>
-         
-         <input ref="/samplesurvey/q4free">
-            <label>Type in some text. Whatever you want.</label>
-            <hint>No, not here! up there!</hint>
-         </input>
-         
-         <input ref="/samplesurvey/q5date">
-            <label>Please select a date.</label>
-            <hint>I hope this works....</hint>
-         </input>
-         
-         <group>
-            <label>Thar Be Numbers!</label>
-            
-            <trigger ref="/samplesurvey/interim2">
-               <label>We are now entering the section with numbers. FUN!</label>
-            </trigger>
-            
-            <input ref="/samplesurvey/q7number">
-               <label>Input a number between -1.0 and 1.0.</label>
-               <hint>you should use numbers!</hint>
-            </input>
-            
-            <input ref="/samplesurvey/q8number">
-               <label>Input a number between 1 and 5.</label>
-               <hint>Still supposed to be using numbers!</hint>
-            </input>
-            
-            <input ref="/samplesurvey/q9number">
-               <label>Input a number between 0 and 4.</label>
-               <hint>did someone say the word NUMBER?</hint>
-            </input>
-            
-            <input ref="/samplesurvey/q10number">
-               <label ref="jr:itext('q10text')"/> 
-               <hint>This is the sum of question 8 and question 9.</hint>
-            </input>
-            
-         </group>
-         
-         <trigger ref="/samplesurvey/interim3">
-            <label>We now move on to looping. This will be even more fun than numbers!</label>
-         </trigger>
-         
-         <group>
-            <label>linked to value from question ten!</label>
-            <repeat nodeset="/samplesurvey/q11number" jr:count="/samplesurvey/q10answer">
-               <select1 ref="/samplesurvey/q11number/q11a">
-                  <label>click on one of these.</label>
-                  <hint>Suffer the Slings and Arrows!</hint>
-                  <item>
-                     <label>Option 1</label>
-                     <value>q11opt1</value>
-                  </item>
-                  <item>
-                     <label>Option 2 (go to C)</label>
-                     <value>q11opt2</value>
-                  </item>
-                  <item>
-                     <label>Option 3</label>
-                     <value>q11opt3</value>
-                  </item>
-                  <item>
-                     <label>Other...</label>
-                     <value>q11opt4</value>
-                  </item>
-               </select1>
-               
-               <input ref="/samplesurvey/q11number/q11a_5">
-                  <label>Please explain your other option:</label>
-               </input>
+					<text id="q2select"><value>2) Please select one of the following:</value></text>
+					<text id="q2hint"><value>Just pick one of them. It will be fine.</value></text>
+					<text id="q2opt1"><value>Option 1</value></text>
+					<text id="q2opt2"><value>Option 2</value></text>
+					<text id="q2opt3"><value>Option 3</value></text>
+					<text id="q2opt4"><value>Other (answer in next question)</value></text>
 
-               <input ref="/samplesurvey/q11number/q11b">
-                  <label>Please enter an integer between 1 and 10.</label>
-                  <hint>We're back to friggin' numbers again...</hint>
-               </input>
+					<text id="q2_5text"><value>3) You answered 'other' in question 3. Tell us what you mean:</value></text>
+					<text id="q2_5hint"><value>Try typing something.</value></text>
 
-               <select1 ref="/samplesurvey/q11number/q11c">
-                  <label>Select one of the following:</label>
-                  <hint>even writing the hints is getting annoying.</hint>
-                  <item>
-                     <label>optioney 1</label>
-                     <value>q11copt1</value>
-                  </item>
-                  <item>
-                     <label>optioney 2</label>
-                     <value>q11copt2</value>
-                  </item>
-                  <item>
-                     <label>optioney 3</label>
-                     <value>q11copt3</value>
-                  </item>
-               </select1> 
-               
-                     
-            </repeat>
-         </group>
-         
-         <trigger ref="/samplesurvey/q11_5interim">
-            <label>Please confirm that you created <output value="/samplesurvey/q11_5text"/> loops.</label>
-         </trigger>
-         
-         <input ref="/samplesurvey/q13relateto10">
-            <label>enter a 'real' number between 0 and <output value="/samplesurvey/q10answer"/> (the result of question 10).</label>
-            <hint>I can only have normal text in here! WAAAHH!</hint>
-         </input>
-      
-         <select1 ref="/samplesurvey/q14scale">
-            <label>Rate on the scale below:</label>
-            <item>
-               <label>0%</label>
-               <value>0</value>
-            </item>
-            <item>
-               <label>10%</label>
-               <value>10</value>
-            </item>
-            <item>
-               <label>20%</label>
-               <value>20</value>
-            </item>
-            <item>
-               <label>30%</label>
-               <value>30</value>
-            </item>
-            <item>
-               <label>40%</label>
-               <value>40</value>
-            </item>
-            <item>
-               <label>50%</label>
-               <value>50</value>
-            </item>
-            <item>
-               <label>60%</label>
-               <value>60</value>
-            </item>
-            <item>
-               <label>70%</label>
-               <value>70</value>
-            </item>
-            <item>
-               <label>80%</label>
-               <value>80</value>
-            </item>
-            <item>
-               <label>90%</label>
-               <value>90</value>
-            </item>
-            <item>
-               <label>100%</label>
-               <value>100</value>
-            </item>
-         </select1>
-         
-         <input ref="/samplesurvey/q15time">
-            <label>Input the time...</label>
-         </input>
-         
-         <trigger ref="/samplesurvey/q16breakfast">
-            <label>The breakfast question would simply be broken up into 3 questions. I have thus far proven that mathematically, an average could be produced. Instead, I am going to test what happens to the Trigger function when I increase the text provided for it. Boggy Boogy Boo! There, wasn't that really scary? I've been trying to put on my scary face for awhile now. It felt really good, but lets talk about something else now. Like ice cream. Everybody who likes ice cream press the acknowledge button!</label>
-         </trigger>
-         
-         <input ref="/samplesurvey/q17final">
-            <label>Great job! We're done! Do you have anything you want to say before we go?</label>
-            <hint>I think you did a very good job! You're quite a wonderful person!</hint>
-         </input>
-         
-         
-      </h:body>
-   </h:html>
+				</translation>
+			</itext>
+
+			<instance>
+				<!-- submitted data and defaults go here -->
+				<samplesurvey xmlns="samplesurvey">
+					<initial_instructions/>
+					<q1YesNo/>
+					<q2option/>
+					<q2_5otherofthree/>
+					<q3option/>
+					<q3YesNoConfirm/>
+					<interim1/>
+					<q4free>Default text example.</q4free>
+					<q5date/>
+					<!-- no q6 -->
+					<interim2/>
+					<q7number/>
+					<q8number/>
+					<q9number/>
+					<q10number/>
+					<q10answer/>
+					<interim3/>
+					<q11number jr:template="">
+						<q11a/>
+						<q11a_5/>
+						<q11b/>
+					</q11number>
+					<q11_5text/>
+					<q11_5interim/>
+					<q13relateto10/>
+					<q14scale/>
+					<q16breakfast/>
+					<q17final/>
+
+				</samplesurvey>
+			</instance> 
+
+			<!-- add properties to the questions, like data types, skip logic, and constraints -->
+			<bind nodeset="/samplesurvey/initial_instructions" required="true()"/>
+			<bind nodeset="/samplesurvey/q1YesNo" type="string"/>
+			<bind nodeset="/samplesurvey/q2option" type="string"/>
+			<bind nodeset="/samplesurvey/q2_5otherofthree" type="string" required="true()"  relevant="/samplesurvey/q2option = 'other'" />
+			<bind nodeset="/samplesurvey/q3option" type="string" />
+			<bind nodeset="/samplesurvey/q3YesNoConfirm" required="true()"/>
+			<bind nodeset="/samplesurvey/interim1" required="true()"/>
+			<bind nodeset="/samplesurvey/q4free" type="string" />
+			<bind nodeset="/samplesurvey/q5date" type="date" />
+			<!--       question 6 is not possible         -->
+			<bind nodeset="/samplesurvey/interim2" required="true()" />
+			<bind nodeset="/samplesurvey/q7number" type="double" required="true()" constraint=". >= -1 and . <= 1" jr:constraintMsg="Number must be between -1 and 1, silly." />
+			<bind nodeset="/samplesurvey/q8number" type="integer" required="true()" constraint=". >= 1 and . <= 5" jr:constraintMsg="Number must be between 1 and 5, silly." />
+			<bind nodeset="/samplesurvey/q9number" type="integer" required="true()" constraint=". >= 0 and . <= 4" jr:constraintMsg="Number must be between 0 and 4, silly." />
+			<bind nodeset="/samplesurvey/q10number" type="integer" required="true()" constraint=". = ../q9number + ../q8number" jr:constraintMsg="Not the right answer..."/>
+			<bind nodeset="/samplesurvey/q10answer" type="integer" calculate="../q8number + ../q9number" />
+			<bind nodeset="/samplesurvey/interim3" required="true()" />
+			<bind nodeset="/samplesurvey/q11number" />
+			<bind nodeset="/samplesurvey/q11number/q11a" type="string" required="true()" />
+			<bind nodeset="/samplesurvey/q11number/q11a_5" type="string" required="true()" relevant="/samplesurvey/q11number/q11a = 'q11opt4'" />
+			<bind nodeset="/samplesurvey/q11number/q11b" type="integer" required="true()" relevant="/samplesurvey/q11number/q11a != 'q11opt2'" constraint=". >= 1 and . <= 10" jr:constraintMsg="1 to 10" />
+			<bind nodeset="/samplesurvey/q11_5text" calculate="count(../q11number)" />
+			<bind nodeset="/samplesurvey/q11_5interim" required="true()" />
+			<bind nodeset="/samplesurvey/q13relateto10" type="double" required="true()"constraint=". >= 0 and . <= ../q10answer" jr:constraintMsg="Check your range, silly." />
+			<bind nodeset="/samplesurvey/q14scale" type="integer" required="true()" />
+			<bind nodeset="/samplesurvey/q16breakfast" required="true()" />
+			<bind nodeset="/samplesurvey/q17final" type="string" />
+
+		</model>
+	</h:head>
+	<h:body> 
+
+		<!-- define the questions that the user will fill out -->
+		<trigger ref="/samplesurvey/q16breakfast"><label ref="jr:itext('initial_instructions')"/></trigger>
+
+
+
+		<group>
+			<label>Question group A</label>
+
+			<select1 ref="/samplesurvey/q1YesNo">
+				<label ref="jr:itext('q1yesno')"/>
+				<hint ref="jr:itext('q1yesno_hint')"/>
+				<item>
+					<label ref="jr:itext('q1yes')"/>
+					<value>yes</value>
+				</item>
+				<item>
+					<label ref="jr:itext('q1no')"/>
+					<value>no</value>
+				</item>
+			</select1>
+
+
+			<select1 ref="/samplesurvey/q2option">
+				<label ref="jr:itext('q2select')"/>
+				<hint ref="jr:itext('q2hint')"/>
+				<item>
+					<label ref="jr:itext('q2opt1')"/>
+					<value>opt1</value>
+				</item>
+				<item>
+					<label ref="jr:itext('q2opt2')"/>
+					<value>opt2</value>
+				</item>
+				<item>
+					<label ref="jr:itext('q2opt3')"/>
+					<value>opt3</value>
+				</item>
+				<item>
+					<label ref="jr:itext('q2opt4')"/>
+					<value>other</value>
+				</item>
+			</select1>
+
+			<input ref="/samplesurvey/q2_5otherofthree">
+				<label ref="jr:itext('q2_5text')"/>
+				<hint ref="jr:itext('q2_5hint')"/>
+			</input>
+			
+			<trigger ref="/samplesurvey/interim1">
+				<label>4) From now on, these questions are only provided in english (it's getting tiring to write out the extras in just a text editor!)</label>
+			</trigger>
+
+			<select ref="/samplesurvey/q3option">
+				<label>5) Please select any of the following that apply:</label>
+				<hint>Press them all! Go nuts!</hint>
+				<item>
+					<label>Option A</label>
+					<value>1</value>
+				</item>
+				<item>
+					<label>Option B</label>
+					<value>2</value>
+				</item>
+				<item>
+					<label>Option C</label>
+					<value>3</value>
+				</item>
+			</select>
+
+		</group>
+
+		<trigger ref="/samplesurvey/q3YesNoConfirm">
+			<label>6) Acknowledge that you said '<output value="/samplesurvey/q1YesNo"/>' in question one!</label>
+		</trigger>
+
+
+
+		<input ref="/samplesurvey/q4free">
+			<label>7) Type in some text. Whatever you want.</label>
+		</input>
+
+		<input ref="/samplesurvey/q5date">
+			<label>8) Please select a date.</label>
+			<hint>Month, day, year. No way to change the order currently.</hint>
+		</input>
+
+		<group>
+			<label>Numbers</label>
+
+			<trigger ref="/samplesurvey/interim2">
+				<label>9) We are now entering the section with numbers. FUN!</label>
+			</trigger>
+
+			<input ref="/samplesurvey/q7number">
+				<label>10) Input a number between -1.0 and 1.0.</label>
+			</input>
+
+			<input ref="/samplesurvey/q8number">
+				<label>11) Input a number between 1 and 5.</label>
+			</input>
+
+			<input ref="/samplesurvey/q9number">
+				<label>12) Input a number between 0 and 4.</label>
+			</input>
+
+			<input ref="/samplesurvey/q10number">
+				<label>13) Enter the sum of questions 11 and 12. Hint: try <output value="/samplesurvey/q10answer"/></label> 
+			</input>
+		</group>
+
+		<trigger ref="/samplesurvey/interim3">
+			<label>14) We now move on to looping. This will be even more fun than numbers!</label>
+		</trigger>
+
+		<group>
+			<label>Looping based on (13), loop </label>
+			<repeat nodeset="/samplesurvey/q11number" jr:count="/samplesurvey/q10answer">
+				<select1 ref="/samplesurvey/q11number/q11a">
+					<label>15) Select one:</label>
+					<item>
+						<label>Option 1</label>
+						<value>q11opt1</value>
+					</item>
+					<item>
+						<label>Option 2 (skips to next loop)</label>
+						<value>q11opt2</value>
+					</item>
+					<item>
+						<label>Option 3</label>
+						<value>q11opt3</value>
+					</item>
+					<item>
+						<label>Other...</label>
+						<value>q11opt4</value>
+					</item>
+				</select1>
+
+				<input ref="/samplesurvey/q11number/q11a_5">
+					<label>16) Please explain your other option:</label>
+				</input>
+
+				<input ref="/samplesurvey/q11number/q11b">
+					<label>17) Please enter an integer between 1 and 10.</label>
+				</input>
+
+			</repeat>
+		</group>
+
+		<trigger ref="/samplesurvey/q11_5interim">
+			<label>18) Please confirm that you created <output value="/samplesurvey/q11_5text"/> loops.</label>
+		</trigger>
+
+		<input ref="/samplesurvey/q13relateto10">
+			<label>19) Enter a real number between 0 and <output value="/samplesurvey/q10answer"/> (<output value="/samplesurvey/q10answer"/> is the answer to question 13).</label>
+		</input>
+
+		<select1 ref="/samplesurvey/q14scale">
+			<label>Rate on the scale below:</label>
+			<item>
+				<label>0%</label>
+				<value>0</value>
+			</item>
+			<item>
+				<label>10%</label>
+				<value>10</value>
+			</item>
+			<item>
+				<label>20%</label>
+				<value>20</value>
+			</item>
+			<item>
+				<label>30%</label>
+				<value>30</value>
+			</item>
+			<item>
+				<label>40%</label>
+				<value>40</value>
+			</item>
+			<item>
+				<label>50%</label>
+				<value>50</value>
+			</item>
+			<item>
+				<label>60%</label>
+				<value>60</value>
+			</item>
+			<item>
+				<label>70%</label>
+				<value>70</value>
+			</item>
+			<item>
+				<label>80%</label>
+				<value>80</value>
+			</item>
+			<item>
+				<label>90%</label>
+				<value>90</value>
+			</item>
+			<item>
+				<label>100%</label>
+				<value>100</value>
+			</item>
+		</select1>
+
+
+		<input ref="/samplesurvey/q17final">
+			<label>21) Great job! We're done! Do you have anything you want to say before we go?</label>
+			<hint>I think you did a very good job! You're quite a wonderful person!</hint>
+		</input>
+
+
+	</h:body>
+</h:html>
